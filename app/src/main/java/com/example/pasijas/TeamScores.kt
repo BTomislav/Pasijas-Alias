@@ -21,18 +21,6 @@ class TeamScores : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_team_scores)
-       /* val extra=intent.extras
-        var exceptions=extra.getStringArrayList("exceptions")
-        var roundtimeget=extra.getInt("roundtime")
-        var scoregoal=extra.getInt("scoregoal")
-        var id=extra.getInt("id")
-        var names=extra.getStringArray("names")
-        var wcount=extra.getInt("wcount")
-        var rcount=extra.getInt("rcount")
-        var trackteam=extra.getInt("trackteam")
-        var teamscore=extra.getIntArray("teamscores")
-        var playercheck=extra.getInt("playercheck")*/
-
 
         if(!postCheck){
             Results.teamScores[PlayScreen1.trackTeamId]+=(PlayScreen1.rightAnswerCounter-PlayScreen1.wrongAnswerCounter)
@@ -49,7 +37,6 @@ class TeamScores : AppCompatActivity() {
             innertrack+=4
         }
 
-        //trackteam stari
         var winnercheck=0
          btncontinue.setOnClickListener {
           for (i in 0 until Results.teamScores.size){
@@ -60,40 +47,19 @@ class TeamScores : AppCompatActivity() {
           }
           if (winnercheck>0){
               val intent_winner=Intent(this, Winner::class.java)
-              /*val bundle = Bundle()
-              bundle.putInt("scoregoal", scoregoal)
-              bundle.putInt("roundtime",roundtimeget)
-              bundle.putInt("id",id)
-              bundle.putInt("trackteam",trackteam)
-              bundle.putStringArray("names",names)
-              bundle.putStringArrayList("exceptions",exceptions)
-              bundle.putIntArray("teamscores", teamscore)
-              bundle.putInt("playercheck", playercheck)
-              bundle.putInt("winner", winnerid)
-              intent_winner.putExtras(bundle)*/
               startActivity(intent_winner)
           }
           else{
               val intentplay=Intent(this, PlayScreen1::class.java)
               PlayScreen1.trackTeamId++
-              TeamScores.postCheck=false
-              /*val bundle = Bundle()
-              bundle.putInt("scoregoal", scoregoal)
-              bundle.putInt("roundtime",roundtimeget)
-              bundle.putInt("id",id)
-              bundle.putInt("trackteam",trackteam)
-              bundle.putStringArray("names",names)
-              bundle.putStringArrayList("exceptions",exceptions)
-              bundle.putIntArray("teamscores", teamscore)
-              bundle.putInt("playercheck", playercheck)
-              intentplay.putExtras(bundle)*/
+              postCheck=false
               startActivity(intentplay)
           }
         }
     }
    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            TeamScores.postCheck=true
+            postCheck=true
         }
         return super.onKeyDown(keyCode, event)
     }

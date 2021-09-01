@@ -20,30 +20,6 @@ class Results : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_results)
-       /* val right: ArrayList<String>
-        val wrong: ArrayList<String>
-        val roundtimeget: Int
-        val scoregoal: Int
-        val id: Int
-        val names: Array<String>
-        val wcount: Int=0
-        val rcount: Int=0*/
-
-        /*val extra=intent.extras
-        var right=extra.getStringArrayList("right")
-        var wrong=extra.getStringArrayList("wrong")
-        var exceptions=extra.getStringArrayList("exceptions")
-        var roundtimeget=extra.getInt("roundtime")
-        var scoregoal=extra.getInt("scoregoal")
-        var id=extra.getInt("id")
-        var names=extra.getStringArray("names")
-        var wcount=extra.getInt("wcount")
-        var rcount=extra.getInt("rcount")
-        var trackteam=extra.getInt("trackteam")
-        var teamscores=extra.getIntArray("teamscores")
-        var playercheck=extra.getInt("playercheck")*/
-
-
         var test=0
         val list=findViewById<ListView>(R.id.list)
         val buttonShow=findViewById<Button>(R.id.buttonrw)
@@ -74,18 +50,6 @@ class Results : AppCompatActivity() {
         }
         buttonContinue.setOnClickListener {
             val intent_teamscores=Intent(this, TeamScores::class.java)
-            /*val bundle = Bundle()
-            bundle.putInt("scoregoal", scoregoal)
-            bundle.putInt("roundtime",roundtimeget)
-            bundle.putInt("id",id)
-            bundle.putInt("trackteam",trackteam)
-            bundle.putInt("wcount",wcount)
-            bundle.putInt("rcount",rcount)
-            bundle.putStringArray("names",names)
-            bundle.putStringArrayList("exceptions",exceptions)
-            bundle.putIntArray("teamscores", teamscores)
-            bundle.putInt("playercheck", playercheck)
-            intent_teamscores.putExtras(bundle)*/
             startActivity(intent_teamscores)
         }
         }

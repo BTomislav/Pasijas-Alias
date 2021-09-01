@@ -40,28 +40,8 @@ class PlayScreen1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play_screen1)
         val word=findViewById<TextView>(R.id.word)
-
-
-
-        //EXTRAS
-        /*
-        val extra=intent.extras
-        var roundtimeget=extra.getInt("roundtime")
-       // var scoregoal=extra.getInt("scoregoal")
-        var id=extra.getInt("id")
-        var names=extra.getStringArray("names")
-        var trackteam=extra.getInt("trackteam")
-        exception=extra.getStringArrayList("exceptions")
-        var teamscores=extra.getIntArray("teamscores")
-        var playercheck=extra.getInt("playercheck")*/
-
-
-        //Toast.makeText(this,"Runde:"+roundtime+", Score:"+scoregoal+", ID:" +id+"Ime 1. tima:"+names[1], Toast.LENGTH_LONG).show()
         val time=findViewById<TextView>(R.id.timeshow)
-        //val word=findViewById<TextView>(R.id.word)
         val playbtn=findViewById<Button>(R.id.startbutton)
-
-
 
         time.setText(Settings.roundtime.toString())
 
@@ -84,8 +64,6 @@ class PlayScreen1 : AppCompatActivity() {
 
         playbtn.setOnClickListener {
             playbtn.setVisibility(View.GONE)
-            //Toast.makeText(this, "Oke pocelo je", Toast.LENGTH_LONG).show()
-            //play(Settings.roundtime, Settings.scorecap, id, names, trackteam, teamscores, playercheck )
             wrongList.clear()
             rightList.clear()
             wrongAnswerCounter=0
@@ -115,27 +93,7 @@ class PlayScreen1 : AppCompatActivity() {
                 wbutton.isClickable=false
                 rbutton.isClickable=false
                 Handler().postDelayed({
-                    /*if (wrong.isNullOrEmpty()){
-                        wrong.add("No wrong answers")
-                    }
-                    if (right.isNullOrEmpty()){
-                        right.add("No wrong answers")
-                    }*/
                     val intentresult= Intent(this@PlayScreen1, Results::class.java)
-                   /* val bundle = Bundle()
-                    bundle.putInt("scoregoal", scoregoal)
-                    bundle.putInt("roundtime",roundtime)
-                    bundle.putInt("id",id)
-                    bundle.putInt("trackteam",trackteam)
-                    bundle.putInt("wcount",wcount)
-                    bundle.putInt("rcount",rcount)
-                    bundle.putStringArray("names",names)
-                    bundle.putIntArray("teamscores",teamscores)
-                    bundle.putStringArrayList("right",right)
-                    bundle.putStringArrayList("wrong",wrong)
-                    bundle.putStringArrayList("exceptions",exception)
-                    bundle.putInt("playercheck", playercheck)
-                    intentresult.putExtras(bundle)*/
                     startActivity(intentresult)
                     finish()
                 }, 2000)
@@ -173,16 +131,12 @@ class PlayScreen1 : AppCompatActivity() {
         }
         random = rnd()
 
-        //Toast.makeText(this, "Ovo je rnd broj: "+random, Toast.LENGTH_SHORT).show()
         if(exceptionList.contains(random.toString()))
         {
-            //exceptioncounter++
-            //Toast.makeText(this, "Sadrzi ga", Toast.LENGTH_SHORT).show()
             randomfunction(read)
         }
         else{
             exceptionList.add(random.toString())
-            //Toast.makeText(this, "Ovo je dodano sad: "+exception.a, Toast.LENGTH_SHORT).show()
             for (i in 0 until random)
             {
                 line=read.readLine()

@@ -32,14 +32,6 @@ class Team : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_team)
 
-       /* val extra=intent.extras
-        val roundget=extra.getInt("roundtime")
-        val scoreget=extra.getInt("scoregoal")*/
-        //EXTRAS default
-        /* var exceptions=extra.getStringArrayList("exceptions")
-         var teamscore=IntArray(6)*/
-
-
         var listItems = ArrayList<String>()
         if (names.isEmpty()){
         }
@@ -49,9 +41,6 @@ class Team : AppCompatActivity() {
         val lv = findViewById<ListView>(R.id.listview)
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
         lv.adapter = adapter
-
-
-
 
         buttonPlay.setOnClickListener { v ->
             if(id<2)
@@ -64,14 +53,6 @@ class Team : AppCompatActivity() {
                 }
                 PlayScreen1.trackTeamId=0
                 val playintent=Intent(this,PlayScreen1::class.java)
-                /*val bundle = Bundle()
-                bundle.putInt("scoregoal", scoreget)
-                bundle.putInt("roundtime",roundget)
-                bundle.putInt("id",id)
-                bundle.putStringArray("names",names)
-                bundle.putStringArrayList("exceptions",exceptions)
-                bundle.putIntArray("teamscores", teamscore)
-                playintent.putExtras(bundle)*/
                 startActivity(playintent)
             }
         }
@@ -99,12 +80,6 @@ class Team : AppCompatActivity() {
                     Toast.makeText(this, "Fields can't be empty", Toast.LENGTH_SHORT).show()
                 }
                 else if(teamName.text.toString()!="" && playerOneName.text.toString()!="" && playerTwoName.text.toString()!=""){
-                    /*names[track]=id.toString()
-                    names[track+1] = team.text.toString()
-                    names[track + 2] = p1.text.toString()
-                    names[track + 3] = p2.text.toString()
-                    track += 4
-                    id++*/
                     names.add(id.toString())
                     names.add(teamName.text.toString())
                     names.add(playerOneName.text.toString())
@@ -117,21 +92,10 @@ class Team : AppCompatActivity() {
                 }
             }
             popupWindow.showAtLocation(toolbar2, Gravity.CENTER, 0, 1)
-            /*if(track>=24)
-        {
-            Toast.makeText(this, "You've reached max number of teams", Toast.LENGTH_LONG).show()
-            popupWindow.dismiss()
-        }*/
         }
 
 
         lv.setOnItemClickListener { parent, view, position, id ->
-            /*for(i in 0 until 21 step 1){
-                if (names[i]==position.toString()){
-                    Toast.makeText(this, "ID je: "+names[i]+", a ime tima je: "+names[i+1], Toast.LENGTH_LONG).show()
-                }
-            }*/
-
             val inflater: LayoutInflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             val view2 = inflater.inflate(R.layout.popup2, null)
 
@@ -195,49 +159,17 @@ class Team : AppCompatActivity() {
 
                    for(j in i until names.size step 4){
                        names[j]=(names[j].toInt()-1).toString()
-                       //Toast.makeText(this, names[i], Toast.LENGTH_SHORT).show()
                    }
                }
-               //names[i]=(names[i].toInt()-1).toString()
                }
-          /* track-=4
-                for (i in 0 until 18 )
-                {
-                    if (names[i]==position.toString())
-                    {
-                        if(i==20)
-                        {
-                        }
-                        else{
-                            for (j in i until 20 step 1){
-                                if(j==0 || j==4 || j==8 || j==12 || j==16)
-                                {
-
-                                }
-                                else
-                                {
-                                    names[j]=names[j+4]
-                                }
-
-                            }
-                        }
-                        for(o in 20 until 24)
-                        {
-                            names[o]= null.toString()
-                        }
-                    }
-                }*/
            Team.id -= 1
                popupWindow2.dismiss()
-           //Toast.makeText(this, names[5]+"ID je"+names[4], Toast.LENGTH_LONG).show()
-
        }
             popupWindow2.showAtLocation(toolbar2, Gravity.CENTER, 0, 1)
         }
     }
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-
                 val intent2= Intent(this, MainActivity::class.java)
                 startActivity(intent2)
             }
