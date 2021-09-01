@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GridLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#03A9F4"
+        android:padding="20dp"
+        app:columnCount="2"
+        app:rowCount="2">
+        android:orientation="vertical">
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:layout_gravity="right"
+            android:ems="10"
+            android:hint="Team name"
+            android:id="@+id/teamname"
+            app:layout_constraintStart_toEndOf="@+id/text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.75" android:layout_row="0"
+            android:layout_column="1"/>
+    <TextView
+            android:id="@+id/text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team name:"
+            android:layout_gravity="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_row="0" android:layout_column="0"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 1:"
+            android:layout_gravity="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            app:layout_constraintTop_toBottomOf="@+id/text_view" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:id="@+id/textView3"
+            android:layout_row="1" android:layout_column="0"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/player1name"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Player 1 name"
+            app:layout_constraintHorizontal_bias="0.885"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 2:"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" android:id="@+id/textView4" android:layout_row="2"
+            android:layout_column="0"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:hint="Player 2 name"
+            android:id="@+id/player2name"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+
+
+            app:layout_constraintHorizontal_bias="0.873"/>
+    <Button
+            android:gravity="center"
+            android:id="@+id/button_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" tools:layout_editor_absoluteY="246dp" android:layout_row="3"
+            android:layout_column="1"/>
+</GridLayout>
