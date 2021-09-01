@@ -1,19 +1,13 @@
 package com.example.pasijas
 
-import android.app.Dialog
+
 import android.content.Context
-import android.graphics.Color
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.annotation.RequiresApi
-import android.transition.Slide
-import android.transition.TransitionManager
 import android.widget.*
-import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.activity_team.*
-import kotlinx.android.synthetic.main.popup.*
-import android.support.v4.app.NotificationCompat.getExtras
 import android.content.Intent
 import android.view.*
 

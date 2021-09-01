@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
-import android.view.KeyEvent.KEYCODE_BACK
 import android.view.View
 import android.os.CountDownTimer
 import android.os.Handler
@@ -16,9 +15,6 @@ import android.widget.*
 import kotlinx.android.synthetic.main.activity_play_screen1.*
 import kotlinx.android.synthetic.main.activity_team.*
 import java.io.*
-import android.support.v4.os.HandlerCompat.postDelayed
-
-
 
 class PlayScreen1 : AppCompatActivity() {
 

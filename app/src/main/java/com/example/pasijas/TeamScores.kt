@@ -1,15 +1,11 @@
 package com.example.pasijas
 
-import android.content.Context
+
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.view.KeyEvent
-import android.view.LayoutInflater
 import android.widget.*
-import kotlinx.android.synthetic.main.activity_results.*
-import kotlinx.android.synthetic.main.activity_team_scores.*
 
 class TeamScores : AppCompatActivity() {
 

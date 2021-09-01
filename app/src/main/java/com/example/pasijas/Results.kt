@@ -8,7 +8,6 @@ import android.view.Gravity
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.widget.*
-import kotlinx.android.synthetic.main.activity_play_screen1.*
 import kotlinx.android.synthetic.main.activity_results.*
 
 class Results : AppCompatActivity() {
